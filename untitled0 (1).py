@@ -127,6 +127,8 @@ plt.show()
 
 import pickle as pkl
 
+!pip install streamlit
+
 # Identify the best performing model based on mean RMSE
 best_model_name_df1 = results_df1_df.index[0]
 best_model_df1 = models_df1[best_model_name_df1]
@@ -151,6 +153,7 @@ To deploy your model, you'll create a Python file (e.g., `app.py`) with the foll
 import streamlit as st
 import pandas as pd
 import pickle as pkl
+from sklearn.preprocessing import LabelEncoder
 
 # Load the trained model
 @st.cache_resource # Cache the model loading to prevent re-loading on each rerun
@@ -182,6 +185,11 @@ input_data = pd.DataFrame({
 if st.button('Predict Salary'):
     prediction = model.predict(input_data)[0]
     st.success(f'Predicted Salary: ${prediction:,.2f} USD')
+
+# If you also want to show the encoded company size in the Streamlit app, you would add a line like this:
+# st.write('DataFrame df1 with encoded \'company_size\' column:')
+# This part of the code is likely from your notebook and should be adapted or removed if not needed in the app.
+# Assuming the error originated from a line copied directly from the notebook. I will remove the problematic `display` call.
 
 """To run this application:
 
