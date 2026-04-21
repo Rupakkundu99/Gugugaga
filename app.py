@@ -1,9 +1,4 @@
-### `app.py` for Streamlit Deployment
 
-Below is the complete content for your `app.py` file. Save this code to a file named `app.py` in the same directory where your `gradient_boosting_df1_model.pkl` file is located.
-
-```python
-# app.py
 import streamlit as st
 import pandas as pd
 import pickle as pkl
