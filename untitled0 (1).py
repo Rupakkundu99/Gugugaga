@@ -127,8 +127,6 @@ plt.show()
 
 import pickle as pkl
 
-!pip install streamlit
-
 # Identify the best performing model based on mean RMSE
 best_model_name_df1 = results_df1_df.index[0]
 best_model_df1 = models_df1[best_model_name_df1]
