@@ -3,8 +3,6 @@ import streamlit as st
 import pandas as pd
 import pickle as pkl
 
-# Load the trained model
-@st.cache_resource # Cache the model loading to prevent re-loading on each rerun
 def load_model():
     try:
         with open('gradient_boosting_df1_model.pkl', 'rb') as file:
@@ -37,4 +35,3 @@ input_data = pd.DataFrame({
 if st.button('Predict Salary'):
     prediction = model.predict(input_data)[0]
     st.success(f'Predicted Salary: ${prediction:,.2f} USD')
-```
