@@ -1,0 +1,5 @@
+streamlit
+pandas
+scikit-learn
+matplotlib
+pickle-mixin # If you used the `pickle-mixin` library, otherwise just `pickle`
